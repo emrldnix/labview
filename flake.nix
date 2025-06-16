@@ -19,5 +19,7 @@
       packages = forAllSystems (pkgs: {
         labview = pkgs.callPackage ./default.nix { };
       });
+
+      checks = self.packages;
     };
 }
