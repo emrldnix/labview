@@ -86,8 +86,6 @@ stdenv.mkDerivation {
     makeWrapper
   ];
 
-  # autoPatchElfIgnoreMissingDeps = [ "mod_nisessmgr.so.13" ];
-
   unpackPhase = ''
     runHook preUnpack
 
@@ -141,7 +139,7 @@ stdenv.mkDerivation {
     cp PATENTS.txt "$out/usr/share/licenses/LabVIEW-2022/PATENTS.txt"
 
     mkdir -p "$out/usr/share/applications"
-    sed "s,Exec.*,Exec=/usr/local/natinst/LabVIEW-2022-64/labviewprofull -launch "%F"," "$out/usr/local/natinst/LabVIEW-2022-64/etc/desktop/apps/natinst-labview64-2022.desktop" > "$out/usr/share/applications/natinst-labview64-2022.desktop"
+    sed "s,Exec.*,Exec=labview -launch "%F"," "$out/usr/local/natinst/LabVIEW-2022-64/etc/desktop/apps/natinst-labview64-2022.desktop" > "$out/usr/share/applications/natinst-labview64-2022.desktop"
 
     mkdir -p "$out/share/mime/packages"
     cp "$out/usr/local/natinst/LabVIEW-2022-64/etc/desktop/mime/labview.xml" "$out/usr/share/mime/packages"
