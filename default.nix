@@ -130,6 +130,11 @@ stdenv.mkDerivation {
     mkdir -p "$out/bin"
     ln -s "$out/usr/local/natinst/LabVIEW-2022-64/labviewprofull" "$out/bin/labview"
 
+    echo "Adding write access for utils, rpm, deb"
+    chmod -R +w utils
+    chmod -R +w rpm
+    chmod -R +w deb
+
     mv "$out/usr/local/lib64/LabVIEW-2022-64/mod_nisessmgr.so.16" "$out/usr/local/lib64/LabVIEW-2022-64/mod_nisessmgr.so.13"
 
     runHook postInstall
