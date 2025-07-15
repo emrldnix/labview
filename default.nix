@@ -158,6 +158,9 @@ stdenv.mkDerivation {
     ln -s "$out/usr/local/natinst/niPythonInterface/lib64/libniPythonInterface.so.22.3.0" "$out/usr/local/natinst/niPythonInterface/lib64/libniPythonInterface.so"
     ln -s "$out/usr/local/lib64/LabVIEW-2022-64/libNILVRuntimeManager.so.22.3.1" "$out/usr/local/lib64/LabVIEW-2022-64/libNILVRuntimeManager.so"
 
+    cp -r "$out/usr/share" "$out"
+    rm -rf "$out/usr/share"
+
     chmod -R +w $out/usr
 
     patchelf --set-rpath "$out/usr/local/lib64/LabVIEW-2022-64:$out/usr/local/natinst/niPythonInterface/lib64" "$out/usr/local/natinst/LabVIEW-2022-64/labviewprofull"
