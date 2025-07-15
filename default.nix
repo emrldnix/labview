@@ -20,8 +20,17 @@
   alsa-lib,
   cups,
 
+  libxcrypt-legacy,
+  freetype,
+  fontconfig,
+  zlib,
+  ncurses,
+  readline,
+  libuuid,
+
   libarchive,
   autoPatchelfHook,
+  makeWrapper,
 }:
 
 stdenv.mkDerivation {
@@ -51,6 +60,15 @@ stdenv.mkDerivation {
     libgbm
     alsa-lib
     cups.lib
+
+
+    libxcrypt-legacy
+    freetype
+    fontconfig
+    zlib
+    ncurses
+    readline
+    libuuid
   ] ++ (with xorg; [
     libX11
     libXcomposite
@@ -65,6 +83,7 @@ stdenv.mkDerivation {
   nativeBuildInputs = [
     libarchive
     autoPatchelfHook
+    makeWrapper
   ];
 
   # autoPatchElfIgnoreMissingDeps = [ "mod_nisessmgr.so.13" ];
@@ -128,7 +147,6 @@ stdenv.mkDerivation {
     cp "$out/usr/local/natinst/LabVIEW-2022-64/etc/desktop/mime/labview.xml" "$out/usr/share/mime/packages"
 
     mkdir -p "$out/bin"
-    ln -s "$out/usr/local/natinst/LabVIEW-2022-64/labviewprofull" "$out/bin/labview"
 
     echo "Adding write access for utils, rpm, deb"
     chmod -R +w utils
@@ -137,19 +155,26 @@ stdenv.mkDerivation {
 
     mv "$out/usr/local/lib64/LabVIEW-2022-64/mod_nisessmgr.so.16" "$out/usr/local/lib64/LabVIEW-2022-64/mod_nisessmgr.so.13"
 
-    runHook postInstall
-  '';
-
-  postFixup = ''
     ln -s "$out/usr/local/natinst/niPythonInterface/lib64/libniPythonInterface.so.22.3.0" "$out/usr/local/natinst/niPythonInterface/lib64/libniPythonInterface.so"
     ln -s "$out/usr/local/lib64/LabVIEW-2022-64/libNILVRuntimeManager.so.22.3.1" "$out/usr/local/lib64/LabVIEW-2022-64/libNILVRuntimeManager.so"
 
-    patchelf --set-rpath "$out/usr/local/lib64/LabVIEW-2022-64:$out/usr/local/natinst/niPythonInterface/lib64" $out/bin/labview
+    chmod -R +w $out/usr
+
+    patchelf --set-rpath "$out/usr/local/lib64/LabVIEW-2022-64:$out/usr/local/natinst/niPythonInterface/lib64" "$out/usr/local/natinst/LabVIEW-2022-64/labviewprofull"
+
+    ln -s "$out/usr/local/natinst/LabVIEW-2022-64/labviewprofull" "$out/bin/labview"
+
+    wrapProgram $out/bin/labview \
+      --prefix LD_LIBRARY_PATH : "$out/usr/local/lib64/LabVIEW-2022-64:$out/usr/local/natinst/niPythonInterface/lib64" \
+      --set QT_X11_NO_MITSHM 1
+
+    runHook postInstall
   '';
 
   meta = {
     description = "Development system";
     license = lib.licenses.unfree;
+    mainProgram = "labview";
   };
 }
 
