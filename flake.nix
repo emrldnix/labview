@@ -18,6 +18,7 @@
     {
       packages = forAllSystems (pkgs: {
         labview = pkgs.callPackage ./default.nix { };
+        labview_25 = pkgs.callPackage ./2025Q3/default.nix { };
       });
 
       checks = self.packages;

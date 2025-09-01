@@ -1,0 +1,76 @@
+{
+  "version": "25.3.2.49161-0+f9",
+  "hash": "sha256-eBIOU17DI4cTkcBsUuBXobVpTl7kF/OoMe6dGSgcw/s=",
+  "deps": {
+    "ni-labview-2025-core": {
+      "internal": true,
+      "hash": "sha256-UqN02PjlJhdgGy12BuszeTvsXbcUOR4pd9TrnVZx5xM="
+    },
+    "labview-2025-community-exe": {
+      "internal": true,
+      "hash": "sha256-GG4MIOuPUmi8LJ14FN5EOqGNuW/lLXmcJut4qyjItS8="
+    },
+    "labview-2025-exe-libs": {
+      "internal": true,
+      "hash": "sha256-8kP48cDbWJNzBHTWnVs26QaO1bVcAiMrqiGYYtwH56A="
+    },
+    "labview-2025-rte": {
+      "internal": true,
+      "hash": "sha256-9qAsN3+fx0JJE9jNwxv/4hh3hfRyKo/UaJZkGY3ONDA="
+    },
+
+    "ni-euladepot": {
+      "version": "25.5.0.49516-0+f364",
+      "hash": "sha256-eN7m5GtbPowXiuPyulHIbS9KQ32vCxGYR9+aH/5ysVU=",
+      "arch": "all"
+    },
+    "ni-software-action-services": {
+      "version": "25.5.0.49227-0+f75",
+      "hash": "sha256-2t8LWtKCHh6oBrMskaasTAN2/41Q+gXxhb0EqdZFG14="
+    },
+    "ni-avahi-client": {
+      "version": "25.5.0.49226-0+f74",
+      "hash": "sha256-JLI/yGu9NoICz2HrSniusX3cQ3nPcYKR9Zqxa2VXr5A="
+    },
+
+    "ni-labview-vimerge": "sha256-4BAQLzBL5VtlzEvgn51t8pKXfFM1LY36MrVf1vgInOE=",
+    "ni-labview-vicompare": "sha256-V9KwIi20nhkcLIxyBv0M3IKUl/a0+Dl8mDK/QEh7o0s=",
+    "ni-labview-2025-desktop": "sha256-cM25Rdp3uLvT6cM36XgI5/hCT5+8oAeEy6RNorGLSCc=",
+    "ni-labview-2025-examples": "sha256-nIj0rcSrzEAxnr89VTGVgHxtmpMmh8Z+Ip1lqVyhsgM=",
+    "ni-labview-2025-help": "sha256-upkB84fFbshHMLF69vj5gZIQN2AIk6XPkcWSc64Y0F0=",
+    "ni-labview-2025-ref": "sha256-Rf6UiFePDNiPbEyiDJrz+YOihxyHkFHvwMN2nsx01jk=",
+
+    "ni-example-finder-base": {
+      "hash": "sha256-hwfLO4ZnoI3MFYBA6eslbL2SJ32PmvvwrFy2Z4Byki4=",
+      "arch": "all"
+    },
+    "ni-example-finder": "sha256-kngLFsLn39yMFwaokjJwoCK8v5R4TDSXfMblMqFNqYg=",
+    "ni-labview-2025-example-finder": {
+      "hash": "sha256-3pjJDI0UJagjQb6F1V2QvhGk9QaaipNmAjQusBq04HY=",
+      "arch": "all"
+    },
+
+    "ni-python-interface": {
+      "version": "25.3.0.49362-0+f210",
+      "hash": "sha256-PFG/t/4QQFPIF7b2tU5mP57F1ucMnzonjGkP0cMlj8I="
+    },
+    "nitdmsi": {
+      "version": "25.3.0.49362-0+f210",
+      "hash": "sha256-AqzCLHeFu+/eVcNK1qjOZTzihmEMltB/ZTRD0h1+9PE=",
+      "arch": "all"
+    },
+    "nicurli": {
+      "version": "25.5.0.49164-0+f12",
+      "hash": "sha256-djeBLP8/Corid2Lt69UhADVSkSE+gUDnPDQsB5WcIzg="
+    },
+    "nisslcerts": {
+      "version": "25.3.0.49209-0+f57",
+      "hash": "sha256-thtNw9rTsZX+l5+ecfOl69PRNqm6Env2Z1jZh0uCqtc=",
+      "arch": "all"
+    },
+    "ni-openssl3-libs": {
+      "version": "25.5.0.49185-0+f33",
+      "hash": "sha256-x/hz6a8VIKLlHgaHn9Diz5PsX9Jh/+KO69OsKWlD2s4="
+    }
+  }
+}
